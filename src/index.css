@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0b0f1a;
+    --accent: #10b981; /* Changed to Emerald */
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-[#0b0f1a] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-white font-semibold tracking-tight;
+  }
+}
+
+/* Professional Card Style with Emerald Accent */
+.pro-card {
+  @apply bg-slate-900/40 border border-slate-800/50 rounded-2xl hover:border-emerald-500/50 transition-all duration-300;
+}
+
+/* Typography Scale */
+.h1-main { @apply text-4xl md:text-6xl font-bold leading-tight; }
+.h2-sec { @apply text-3xl md:text-4xl font-bold; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0b0f1a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-emerald-500/50 transition-colors;
+}
